@@ -1,3 +1,7 @@
+import colorama
+from colorama import Fore, init, Style
+init(autoreset = True)
+
 ShouldContinue = True
 while ShouldContinue:
     UserInput = input('Student Number (1-128): ')
@@ -18,9 +22,9 @@ while ShouldContinue:
                     if i % y == 0:
                         factors += 1 #+= increments
                 if factors % 2 == 0:
-                    Lockers.append('X')
+                    Lockers.append(Fore.RED + "X")
                 else:
-                    Lockers.append('O')
+                    Lockers.append(Fore.GREEN + "O")
             #for formatting  
             for n in range(0, len(Lockers), 8):
                 print(*Lockers[n:n+8], sep = ' ')
